@@ -77,13 +77,13 @@ keep[562:565] <- TRUE
 data <- data[,keep]
 
 # Tidy data w/ avg of ea. variable for ea. activity + ea. subject ---------
-data.tidy                <- aggregate(data[,1:79], by=list(data$activity_label,
-                                                           data$subject), mean)
-colnames(data.tidy[1:2]) <- c("activity", "subject")
+data.tidy <- aggregate(data[,1:79], by=list(data$activity_label,
+                  data$subject), mean)
+data.tidy$activity <- data.tidy$Group.1
+data.tidy$subject  <- data.tidy$Group.2
+data.tidy$Group.1  <- NULL
+data.tidy$Group.2  <- NULL
 
 # Save and Export ---------------------------------------------------------
 save.image("getting_cleaning_project.Rdata")
-write.csv("data.tidy", file = "final_dataset.csv")
-# The above save.image/write.csv were per my own process -- the write.table() below
-#   is to satify the uploading requirements of the project
 write.table(data.tidy, "final_data.txt", sep=" ", row.name = FALSE)
