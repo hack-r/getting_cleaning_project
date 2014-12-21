@@ -80,3 +80,7 @@ data <- data[,keep]
 data.tidy                <- aggregate(data[,1:79], by=list(data$activity_label,
                                                            data$subject), mean)
 colnames(data.tidy[1:2]) <- c("activity", "subject")
+
+# Save and Export ---------------------------------------------------------
+save.image("getting_cleaning_project.Rdata")
+write.csv("data.tidy", file = "final_dataset.csv")
