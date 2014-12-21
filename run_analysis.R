@@ -84,3 +84,6 @@ colnames(data.tidy[1:2]) <- c("activity", "subject")
 # Save and Export ---------------------------------------------------------
 save.image("getting_cleaning_project.Rdata")
 write.csv("data.tidy", file = "final_dataset.csv")
+# The above save.image/write.csv were per my own process -- the write.table() below
+#   is to satify the uploading requirements of the project
+write.table(data.tidy, "final_data.txt", sep=" ", row.names = FALSE)
