@@ -15,13 +15,15 @@ Links to a full description and the original dataset are available in CodeBook.m
 
 # About run_analysis.R
 
-The R file run_analysis.R accomplishes the following objectives:
+The R file run_analysis.R does the following things:
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive variable names. 
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+It does those 5 things above by first downloading data, then reading in the data, assigning data to objects and human readable names to columns, then merging, filtering, and tidying the data.
 
 # Special notes
 ## Special note #1
